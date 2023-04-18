@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
     @ExceptionHandler(InvalidCredentials.class)
-    public ResponseEntity<String>icHandler(InvalidCredentials e){
+    public ResponseEntity<String> icHandler(InvalidCredentials e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
+
     @ExceptionHandler(UnauthorizedUser.class)
-    public ResponseEntity<String >uuHandler(UnauthorizedUser e){
-        return new ResponseEntity<>(e.getMessage(),HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<String> uuHandler(UnauthorizedUser e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
 }
