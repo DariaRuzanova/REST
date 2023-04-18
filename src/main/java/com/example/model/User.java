@@ -8,13 +8,13 @@ import java.util.Objects;
 
 public class User {
     @NotBlank
-    @Size(min = 2,max = 10)
+    @Size(min = 2, max = 10)
     private String name;
 
     @NotNull
     @NotBlank
-    @Size(min=4)
-    private String password;
+    @Size(min = 4)
+    private final String password;
 
     public User(String name, String password) {
         this.name = name;
