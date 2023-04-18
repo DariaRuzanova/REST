@@ -5,6 +5,7 @@ import com.example.repository.Authorities;
 import com.example.service.AuthorizationService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +19,17 @@ public class AuthorizationController {
         this.service = service;
     }
 
-    @GetMapping("/authorize")
+//    @GetMapping("/authorize")
+//    public List<Authorities>getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password){
+//        var result = service.getAuthorities(user,password);
+//        return result;
+//    }
 
-    public List<Authorities>getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password){
-        var result = service.getAuthorities(user,password);
+    @GetMapping("/authorize")
+    public List<Authorities>getAuthorities(@Valid User  user){
+        var result = service.getAuthorities(user.getName(),user.getPassword());
         return result;
     }
+
 }
 
