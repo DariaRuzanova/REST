@@ -1,3 +1,11 @@
 GET http://localhost:8080/authorize?user=Oleg&password=12345
 
 ###
+
+GET http://localhost:8080/authorize?user=Pavel&password=45678
+
+###
+
+GET http://localhost:8080/authorize?user=Misha&password=45678
+
+###
